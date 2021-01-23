@@ -1,5 +1,7 @@
 import './App.css';
 import React from 'react';
+import {BrowserRouter as Router} from 'react-router-dom';
+import Header from '../Header/Header';
 
 class App extends React.Component {
     state = { users: [] }
@@ -14,10 +16,13 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
-                <h1 className="App-header">Users</h1>
-                {this.state.users.map(user =>
-                    <div key={user.login}>{JSON.stringify(user)}</div>
-                )}
+                <Router>
+                    <Header/>
+                    <h1 className="App-header">Users</h1>
+                    {this.state.users.map(user =>
+                        <div key={user.login}>{JSON.stringify(user)}</div>
+                    )}
+                </Router>
             </div>
         );
     }
