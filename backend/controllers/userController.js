@@ -43,4 +43,4 @@ function updateUser(userLogin, userInfo) {
     });
 }
 
-module.exports = {addUser, getUser, deleteUser, getAllUsers, updateUser}
+module.exports = {addUser, getUser, deleteUser, getAllUsers, updateUser, users}

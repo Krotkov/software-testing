@@ -13,7 +13,7 @@ function Header(props) {
         <li><button onClick={props.dropState}>Logout</button></li>
     </ul>
 
-    let userComp = (props.userInfo.name !== '') ? logoutComp : signInUpComp
+    let userComp = (props.userInfo.login !== '') ? logoutComp : signInUpComp
 
     return (
         <header>
