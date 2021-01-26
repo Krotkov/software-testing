@@ -1,28 +1,36 @@
 import './App.css';
 import React from 'react';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 import Header from '../Header/Header';
 
 class App extends React.Component {
-    state = { users: [] }
 
-    componentDidMount() {
-        fetch('/users')
-            .then(res => res.json())
-            .then(users => this.setState({ users }))
-            .catch(console.error);
+    constructor(props) {
+        super(props);
+        this.changeName = this.changeName.bind(this)
+        this.dropState = this.dropState.bind(this)
+        this.state = {name: ''}
+    }
+
+    changeName(newName) {
+        this.setState({name: newName})
+    }
+
+    dropState() {
+        this.setState({name: ''})
     }
 
     render() {
+
+        let myState = this.state;
+
         return (
             <div className="App">
-                <Router>
-                    <Header/>
-                    <h1 className="App-header">Users</h1>
-                    {this.state.users.map(user =>
-                        <div key={user.login}>{JSON.stringify(user)}</div>
-                    )}
-                </Router>
+                <BrowserRouter>
+                    <Header userInfo={myState}
+                            dropState={this.dropState}
+                    />
+                </BrowserRouter>
             </div>
         );
     }

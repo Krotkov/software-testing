@@ -13,6 +13,7 @@ function addUser(user) {
     if (this.users[user.login] !== undefined) {
         throw Error('Trying to add existing user')
     }
+    user.maxNumber = 0
     users[user.login] = user;
 }
 

@@ -1,13 +1,24 @@
 header {
     display: flex;
     padding: 0 18%;
-    align-items: center;
+    /*align-items: center;*/
     min-height: 9vh;
     background: darkblue;
 }
 
+nav {
+    display: flex;
+}
+
+.leftSide {
+}
+
+.rightSide {
+    padding-left: 30vw;
+}
+
 .nav-links {
-    padding-left: 3vw;
+    /*padding-left: 3vw;*/
     display: flex;
     text-transform: uppercase;
     list-style: none;
@@ -15,7 +26,7 @@ header {
 
 .nav-links a {
     color: white;
-    padding: 0 1.5vw;
+    padding: 0 0.5vw;
     font-size: 20px;
     text-decoration: none;
 }
