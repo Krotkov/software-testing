@@ -3,7 +3,7 @@ import '../App/App.css';
 
 function Info(props) {
 
-    let name = props.userInfo.login !== '' ? (" " + props.userInfo.login) : "";
+    let name = props.userInfo.login !== '' ? (", " + props.userInfo.login) : "";
 
     return (
         <div className='App-text'>

@@ -13,7 +13,7 @@ class SignUp extends Component {
         const resp = await fetch(`/users/register?login=${event.target[0].value}&password=${event.target[1].value}&name=${event.target[2].value}`)
         switch (resp.status) {
             case 200:
-                this.props.changeLogin("gavno");
+                this.props.changeLogin(event.target[0].value);
                 break;
             default:
                 alert("Choose other login:(");
@@ -26,8 +26,9 @@ class SignUp extends Component {
                 <div className='App-form-all'>
                     <div className='App-form'>
                         <form className='App-form-content' onSubmit={this.submitRegister}>
+                            <b>Sign Up</b>
                             <input className='App-form_input' placeholder='Your login' name='login'/>
-                            <input className='App-form_input' placeholder='Your password' name='password'/>
+                            <input className='App-form_input' placeholder='Your password' type='password' name='password'/>
                             <input className='App-form_input' placeholder='Your name' name='name'/>
                             <button className='App-form_submit-button' type='submit'>Sign up</button>
                         </form>

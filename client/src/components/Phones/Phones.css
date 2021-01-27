@@ -1,0 +1,16 @@
+.phones {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+}
+
+.phones_item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #e5f4ff;
+}
+
+.phones_item:hover {
+    background-color: #A5B4BF;
+}

@@ -41,4 +41,16 @@ router.get('/register', (req, res) => {
     }
 })
 
+router.get('/phones', (req, res) => {
+    res.status(200).send(userController.users[req.query.login].phones);
+})
+
+router.post('/phones', (req, res) => {
+    userController.users[req.query.login].phones.push({
+        name: req.query.name,
+        phone: req.query.phone
+    })
+    res.status(200).send()
+})
+
 module.exports = router;
