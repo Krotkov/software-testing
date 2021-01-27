@@ -4,6 +4,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import Header from '../Header/Header';
 import SignIn from '../Authorisation/SignIn';
 import SignUp from "../Authorisation/SignUp";
+import Info from "../Info/Info";
 
 class App extends React.Component {
 
@@ -38,6 +39,7 @@ class App extends React.Component {
                     <Route path='/register' component={() => <SignUp userInfo={myState}
                                                                      changeLogin={this.changeLogin}
                                                                      dropState={this.dropState}/>}/>
+                    <Route path='/info' component={() => <Info userInfo={myState}/>}/>
                 </BrowserRouter>
             </div>
         );
