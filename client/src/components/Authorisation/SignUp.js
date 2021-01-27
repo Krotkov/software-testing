@@ -2,24 +2,21 @@ import React, {Component} from 'react';
 import './SignIn.css'
 import {Redirect} from 'react-router-dom'
 
-class SignIn extends Component {
+class SignUp extends Component {
     constructor(props) {
         super(props);
-        this.submitLogin = this.submitLogin.bind(this)
+        this.submitRegister = this.submitRegister.bind(this)
     }
 
-    submitLogin = async (event) => {
+    submitRegister = async (event) => {
         event.preventDefault();
-        if (this.props.userInfo.login !== '') {
-            alert("You are already authorized" + this.props.userInfo.login);
-        }
-        const resp = await fetch(`/users/login?login=${event.target[0].value}&password=${event.target[1].value}`)
+        const resp = await fetch(`/users/register?login=${event.target[0].value}&password=${event.target[1].value}&name=${event.target[2].value}`)
         switch (resp.status) {
             case 200:
-                this.props.changeLogin(event.target[0].value);
+                this.props.changeLogin("gavno");
                 break;
             default:
-                alert("Wrong login or password");
+                alert("Choose other login:(");
         }
     }
 
@@ -28,10 +25,11 @@ class SignIn extends Component {
             return (
                 <div className='App-form-all'>
                     <div className='App-form'>
-                        <form className='App-form-content' onSubmit={this.submitLogin}>
+                        <form className='App-form-content' onSubmit={this.submitRegister}>
                             <input className='App-form_input' placeholder='Your login' name='login'/>
                             <input className='App-form_input' placeholder='Your password' name='password'/>
-                            <button className='App-form_submit-button' type='submit'>Sign in</button>
+                            <input className='App-form_input' placeholder='Your name' name='name'/>
+                            <button className='App-form_submit-button' type='submit'>Sign up</button>
                         </form>
                     </div>
                 </div>
@@ -44,4 +42,4 @@ class SignIn extends Component {
     }
 }
 
-export default SignIn;
+export default SignUp;

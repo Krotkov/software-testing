@@ -3,6 +3,7 @@ import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Header from '../Header/Header';
 import SignIn from '../Authorisation/SignIn';
+import SignUp from "../Authorisation/SignUp";
 
 class App extends React.Component {
 
@@ -34,6 +35,9 @@ class App extends React.Component {
                     <Route path='/login' component={() => <SignIn userInfo={myState}
                                                                   changeLogin={this.changeLogin}
                                                                   dropState={this.dropState}/>}/>
+                    <Route path='/register' component={() => <SignUp userInfo={myState}
+                                                                     changeLogin={this.changeLogin}
+                                                                     dropState={this.dropState}/>}/>
                 </BrowserRouter>
             </div>
         );

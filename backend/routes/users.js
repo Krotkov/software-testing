@@ -26,4 +26,19 @@ router.get('/login', (req, res) => {
     }
 })
 
+router.get('/register', (req, res) => {
+    if (req.query.login in userController.users) {
+        res.status(400).send();
+    } else {
+        const user = {
+            login: req.query.login,
+            password: req.query.password,
+            name: req.query.name,
+            phones: []
+        }
+        userController.addUser(user);
+        res.status(200).send();
+    }
+})
+
 module.exports = router;
