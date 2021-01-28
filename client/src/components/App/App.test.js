@@ -1,10 +1,10 @@
 import React from 'react';
 import App from './App';
 import {shallow} from 'enzyme';
-import '@testing-library/react';
+import {render, fireEvent, screen} from "@testing-library/react";
 
-describe('<App />', () => {
-    test('App function testing', () => {
+describe('check app state', () => {
+    it('App function testing', () => {
 
         const login = "testlogin"
 
@@ -17,3 +17,4 @@ describe('<App />', () => {
         expect(AppComponent.state()).toHaveProperty('login', '');
     });
 });
+

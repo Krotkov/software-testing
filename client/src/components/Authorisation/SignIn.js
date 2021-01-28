@@ -27,9 +27,9 @@ class SignIn extends Component {
                     <div className='App-form'>
                         <form className='App-form-content' onSubmit={this.submitLogin}>
                             <b>Sign In</b>
-                            <input className='App-form_input' placeholder='Your login' name='login'/>
-                            <input className='App-form_input' placeholder='Your password' type='password' name='password'/>
-                            <button className='App-form_submit-button' type='submit'>Sign in</button>
+                            <input className='App-form_input' placeholder='Your login' data-testid='sign-in-login' name='login'/>
+                            <input className='App-form_input' placeholder='Your password' data-testid='sign-in-password' type='password' name='password'/>
+                            <button className='App-form_submit-button' data-testid='sign-in-button' type='submit'>Sign in</button>
                         </form>
                     </div>
                 </div>
