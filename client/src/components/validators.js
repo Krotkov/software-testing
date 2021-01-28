@@ -22,7 +22,7 @@ export function validatePassword(password) {
             message: 'Password should be non empty string'
         }
     }
-    const regex = /^\w{8,20}$/
+    const regex = /^.{8,20}$/
     if (!regex.test(password)) {
         return {
             isGood: false,

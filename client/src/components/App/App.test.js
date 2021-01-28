@@ -1,8 +1,19 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
 import App from './App';
+import {shallow} from 'enzyme';
+import '@testing-library/react';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('<App />', () => {
+    test('App function testing', () => {
+
+        const login = "testlogin"
+
+        const AppComponent = shallow(<App/>);
+        const instance = AppComponent.instance();
+        expect(AppComponent.state()).toHaveProperty('login', '');
+        instance.changeLogin(login);
+        expect(AppComponent.state()).toHaveProperty('login', login);
+        instance.dropState();
+        expect(AppComponent.state()).toHaveProperty('login', '');
+    });
 });
