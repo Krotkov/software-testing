@@ -1,8 +1,9 @@
 header {
     display: flex;
-    padding: 0 18%;
-    /*align-items: center;*/
-    min-height: 9vh;
+    padding: 0 15rem;
+    align-items: center;
+    text-align: center;
+    min-height: 3rem;
     background: darkblue;
 }
 

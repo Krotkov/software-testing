@@ -10,9 +10,6 @@ class SignIn extends Component {
 
     submitLogin = async (event) => {
         event.preventDefault();
-        if (this.props.userInfo.login !== '') {
-            alert("You are already authorized" + this.props.userInfo.login);
-        }
         const resp = await fetch(`/users/login?login=${event.target[0].value}&password=${event.target[1].value}`)
         switch (resp.status) {
             case 200:

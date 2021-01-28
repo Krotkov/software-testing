@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './Phones.css';
+import {validateName, validatePhone} from "../validators";
 
 function represent(phone) {
     return (<li className='phones_item'>
@@ -27,15 +28,26 @@ class Phones extends Component {
 
     handleSubmit = async (event) => {
         event.preventDefault();
-        const params = {
-            name: event.target[0].value,
-            phone: event.target[1].value
+        const name = event.target[0].value;
+        const phone = event.target[1].value;
+        const vName = validateName(name);
+        if (!vName.isGood) {
+            alert(vName.message);
+            return;
         }
-        const resp = await fetch(`/users/phones?login=${this.state.login}&name=${params.name}&phone=${params.phone}`,
+        const vPhone = validatePhone(phone);
+        if (!vPhone.isGood) {
+            alert(vPhone.message);
+            return;
+        }
+        const resp = await fetch(`/users/phones?login=${this.state.login}&name=${name}&phone=${phone}`,
             {method: 'POST'});
         switch (resp.status) {
             case 200:
-                this.state.phones.push(params);
+                this.state.phones.push({
+                    name: name,
+                    phone: phone
+                });
                 this.forceUpdate();
                 break;
             default:
@@ -70,7 +82,7 @@ class Phones extends Component {
                                    name='name'
                                    placeholder='name'
                             />
-                            <input type='phone'
+                            <input type='text'
                                    required='true'
                                    className='App-form_input'
                                    name='name'

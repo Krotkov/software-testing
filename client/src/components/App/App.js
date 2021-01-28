@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Redirect, Route} from 'react-router-dom';
 import Header from '../Header/Header';
 import SignIn from '../Authorisation/SignIn';
 import SignUp from "../Authorisation/SignUp";
@@ -42,6 +42,7 @@ class App extends React.Component {
                                                                      dropState={this.dropState}/>}/>
                     <Route path='/info' component={() => <Info userInfo={myState}/>}/>
                     <Route path='/phones' component={() => <Phones login={myState.login}/>}/>
+                    <Redirect to='/info'/>
                 </BrowserRouter>
             </div>
         );
