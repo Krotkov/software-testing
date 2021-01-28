@@ -44,7 +44,7 @@ class SignUp extends Component {
             return (
                 <div className='App-form-all'>
                     <div className='App-form'>
-                        <form className='App-form-content' onSubmit={this.submitRegister}>
+                        <form className='App-form-content' id='sign-up-form' onSubmit={this.submitRegister}>
                             <b>Sign Up</b>
                             <input className='App-form_input' placeholder='Your login' name='login'/>
                             <input className='App-form_input' placeholder='Your password' type='password'

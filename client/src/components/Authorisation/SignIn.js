@@ -25,11 +25,11 @@ class SignIn extends Component {
             return (
                 <div className='App-form-all'>
                     <div className='App-form'>
-                        <form className='App-form-content' onSubmit={this.submitLogin}>
+                        <form className='App-form-content' id='sign-in-form' onSubmit={this.submitLogin}>
                             <b>Sign In</b>
                             <input className='App-form_input' placeholder='Your login' data-testid='sign-in-login' name='login'/>
                             <input className='App-form_input' placeholder='Your password' data-testid='sign-in-password' type='password' name='password'/>
-                            <button className='App-form_submit-button' data-testid='sign-in-button' type='submit'>Sign in</button>
+                            <button className='App-form_submit-button' data-testid='sign-in-button' id='sign-in-button' type='submit'>Sign in</button>
                         </form>
                     </div>
                 </div>

@@ -36,7 +36,7 @@ router.get('/register', (req, res) => {
             name: req.query.name,
             phones: []
         }
-        userController.addUser(user);
+        userController.users[user.login] = user;
         res.status(200).send();
     }
 })
@@ -50,6 +50,18 @@ router.post('/phones', (req, res) => {
         name: req.query.name,
         phone: req.query.phone
     })
+    res.status(200).send()
+})
+
+router.post('/reset', (req, res) => {
+    userController.users = {
+        'admin': {
+            login: 'admin',
+            password: 'admin',
+            name: 'Admin',
+            phones: []
+        }
+    }
     res.status(200).send()
 })
 

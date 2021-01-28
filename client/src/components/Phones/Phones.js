@@ -64,7 +64,7 @@ class Phones extends Component {
         }
 
         return (<div className='phones'>
-                <ul className='budget-coins'>
+                <ul className='budget-coins' id='phone-list'>
                     <b>My Phones</b>
                     {this.state.phones.map(c => {
                         return represent(c);
@@ -72,7 +72,7 @@ class Phones extends Component {
                 </ul>
                 <div className='App-form_wrapper budget-form'>
                     <div className='App-form_wrapper-half'>
-                        <form className='App-form' onSubmit={this.handleSubmit}>
+                        <form className='App-form' id='add-phone-form' onSubmit={this.handleSubmit}>
                             <p className='App-form_name'>
                                 Add new phone
                             </p>

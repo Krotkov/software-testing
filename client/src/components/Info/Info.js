@@ -7,7 +7,7 @@ function Info(props) {
 
     return (
         <div className='App-text'>
-            <p><h1>Привет{name}!</h1></p>
+            <p><h1 id='greeting'>Привет{name}!</h1></p>
             <p><h3>Пользуйся нашим сайтом, где ты можешь сохранять телефоны своих друзей и знакомых!!!</h3></p>
         </div>
     )
