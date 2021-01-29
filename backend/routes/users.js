@@ -26,7 +26,7 @@ router.get('/login', (req, res) => {
     }
 })
 
-router.get('/register', (req, res) => {
+router.post('/register', (req, res) => {
     if (req.query.login in userController.users) {
         res.status(400).send();
     } else {
