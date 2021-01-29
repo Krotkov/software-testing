@@ -29,7 +29,8 @@ class SignUp extends Component {
             alert(vName.message)
             return
         }
-        const resp = await fetch(`/users/register?login=${login}&password=${password}&name=${name}`)
+        const resp = await fetch(`/users/register?login=${login}&password=${password}&name=${name}`
+        , {method: 'POST'})
         switch (resp.status) {
             case 200:
                 this.props.changeLogin(login);
