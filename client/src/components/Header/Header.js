@@ -21,7 +21,7 @@ function Header(props) {
                 <div className='leftSide'>
                     <ul className='nav-links' id='nav-links'>
                         <li><Link to='/info'>About</Link></li>
-                        <li><Link to='/phones'>Phones</Link></li>
+                        <li><Link to='/phones' id='phone-link'>Phones</Link></li>
                     </ul>
                 </div>
                 <div className='rightSide'>

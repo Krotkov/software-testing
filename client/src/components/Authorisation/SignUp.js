@@ -46,10 +46,11 @@ class SignUp extends Component {
                     <div className='App-form'>
                         <form className='App-form-content' id='sign-up-form' onSubmit={this.submitRegister}>
                             <b>Sign Up</b>
-                            <input className='App-form_input' placeholder='Your login' name='login'/>
-                            <input className='App-form_input' placeholder='Your password' type='password'
+                            <input className='App-form_input' id='login-input' placeholder='Your login' name='login'/>
+                            <input className='App-form_input' id='password-input' placeholder='Your password'
+                                   type='password'
                                    name='password'/>
-                            <input className='App-form_input' placeholder='Your name' name='name'/>
+                            <input className='App-form_input' id='name-input' placeholder='Your name' name='name'/>
                             <button className='App-form_submit-button' type='submit'>Sign up</button>
                         </form>
                     </div>

@@ -58,7 +58,7 @@ class Phones extends Component {
     render() {
 
         if (this.state.login === '') {
-            return <div className='App-text'>
+            return <div className='App-text' id='unlogin-text'>
                 <div className='App-text_item'>You need to authorize</div>
             </div>
         }
