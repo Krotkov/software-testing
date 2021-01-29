@@ -80,15 +80,17 @@ class Phones extends Component {
                                    required='true'
                                    className='App-form_input'
                                    name='name'
+                                   id='name-input'
                                    placeholder='name'
                             />
                             <input type='text'
                                    required='true'
                                    className='App-form_input'
                                    name='name'
+                                   id='phone-input'
                                    placeholder='phone'
                             />
-                            <button className='App-form_submit-button'>Add phone</button>
+                            <button className='App-form_submit-button' id='submit-phone'>Add phone</button>
                         </form>
                     </div>
                 </div>
