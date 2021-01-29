@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-node@v2
 
       - name: set up and run server
-        working-directory: react-backend
+        working-directory: backend
         run: |
           npm install
           npm start &
